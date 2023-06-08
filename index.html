@@ -6,20 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My TODOS</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="main-container">
+    <main class="main-wrapper">
         <div class="create-todo">
-            <input type="text" placeholder="Create a new todo">
-            <button>OK</button>
-        </div>
-        <div class="not-completed">
-            <p>Something to do</p>
-            <input type="checkbox">
-        </div>
-        <div class="completed">
+            <form>
+                <input type="text" placeholder="Create a new Todo">
 
+            </form>
         </div>
+        <section class="todo-section">
+            <ul id="not-completed" class="background">
+                <h1>TODOs</h1>
+                <p>Something to do</p>
+                <input type="checkbox">
+            </ul>
+            <ul id="completed" class="background">
+                <li>
+                    <article>
+
+                    </article>
+                </li>
+                <h1>Completed Todos</h1>
+                <p>Something to do</p>
+                <input type="checkbox">
+            </ul>
+        </section>
+        
     </main>
     <script src="script.js"></script>
 </body>

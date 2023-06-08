@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(to bottom right, rgb(134, 176, 238), rgb(7, 112, 77));
+    background-size: contain;
+    height: 100vh;
+}
+
+.main-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.todo-section {
+    /* display: flex;
+    justify-content: center;
+    gap: 2em; */
+    font-family: 'Kalam', cursive;
+}
+
+.background {
+    background-image: url(images/background-note\ paper.jpg);
+    background-size: contain;
+    height: 800px;
+    width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.completed {
+    
+}
+
+.not-completed {
+
+}
