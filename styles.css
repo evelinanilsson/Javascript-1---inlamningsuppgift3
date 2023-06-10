@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background-image: linear-gradient(to bottom right, rgb(134, 176, 238), rgb(7, 112, 77));
+    background-image: url(images/table.jpeg);
     background-size: contain;
     height: 100vh;
 }
@@ -14,28 +14,46 @@ body {
     margin: auto;
 }
 
+.create-todo {
+    text-align: center;
+    padding-top: 2em;
+}
+
+.create-todo input {
+    padding: 1em;
+}
+.create-todo button {
+    padding: 1em;
+}
 .todo-section {
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    gap: 2em; */
+    gap: 2em; 
     font-family: 'Kalam', cursive;
+    padding: 2em;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+#completed {
+    text-decoration: line-through;
 }
 
 .background {
-    background-image: url(images/background-note\ paper.jpg);
-    background-size: contain;
-    height: 800px;
-    width: 600px;
+    background-color: rgb(253, 243, 231);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 23px 37px -5px, rgba(0, 0, 0, 0.3) 0px 18px 26px -8px;
+    padding: 2em;
+}
 
+.flex-row {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.completed {
-    
+    gap: 2em;
 }
 
-.not-completed {
-
+input[type=checkbox] {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
 }
