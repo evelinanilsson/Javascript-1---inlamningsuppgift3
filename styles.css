@@ -7,6 +7,7 @@ body {
     background-image: url(images/table.jpeg);
     background-size: contain;
     height: 100vh;
+    font-family: 'Kalam', cursive;
 }
 
 .main-wrapper {
@@ -29,7 +30,7 @@ h1 {
 }
 
 .create-todo input, button {
-    font: 1em 'Kalam';
+    font-size: 1em;
     padding: 1em;
     border-radius: 0.5em;
 }
@@ -38,7 +39,6 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 2em; 
-    font-family: 'Kalam', cursive;
     padding: 2em;
 }
 
