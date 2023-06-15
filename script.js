@@ -3,6 +3,7 @@ let idCounter = 31;
 const todosNotCompleted = document.querySelector("#not-completed");
 const todosCompleted = document.querySelector("#completed");
 const createForm = document.querySelector(".create-todo");
+let todoInput = document.getElementById("todo-input");
 
 getTodos();
 
@@ -33,7 +34,6 @@ function applyTodos(todosArray){
 }
 
 function createTodoElements (todo) {
-
     let listItem = document.createElement("li");
     listItem.classList.add("todo-element");
     let article = document.createElement("article");
@@ -51,11 +51,14 @@ function createTodoElements (todo) {
     userId.innerText = "UserId= " + todo.userId;
     complete.type = "checkbox";
     complete.checked = todo.completed;
+    complete.title ="Complete/undo complete";
     deleteButton.innerHTML = `<img src="images/trashcan1.png">`;
     deleteButton.style.height ="10px;"
+    deleteButton.style.padding ="0";
+    deleteButton.title = "Delete TODO";
 
     flexRow.append(todoId, userId, complete, deleteButton);
-    article.append(todoTitle,  flexRow);
+    article.append(todoTitle, flexRow);
     listItem.append(article);
 
     complete.addEventListener("change", (event) => {
@@ -73,28 +76,32 @@ function createTodoElements (todo) {
 }
 
 
-function createNewTodo(todoTitle, todoId, userId){
+function createNewTodo(todoTitle, todosArray, after){
     fetch("https://dummyjson.com/todos/add", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
             todo: todoTitle,
             complete: false,
-            todoId: 1,
             userId: 1,
         })
     })
         .then((res) => res.json())
         .then((value) => {
             value.id = idCounter++;
-            todosArray.push(value);
+            todosArray.unshift(value);
             after();
-            
         });
 }
 
 createForm.addEventListener("submit", (event) => {
-    
+    event.preventDefault();
+
+    todoTitle = todoInput.value;
+
+    createNewTodo(todoTitle, todosArray, () => {
+        applyTodos(todosArray)
+    });
 })
 
 function deleteTodo(todo, todosArray, after){

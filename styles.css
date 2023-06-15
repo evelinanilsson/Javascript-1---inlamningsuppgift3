@@ -14,17 +14,26 @@ body {
     margin: auto;
 }
 
+h1 {
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+#completed {
+    text-decoration: line-through;
+}
+
 .create-todo {
     text-align: center;
     padding-top: 2em;
 }
 
-.create-todo input {
+.create-todo input, button {
+    font: 1em 'Kalam';
     padding: 1em;
+    border-radius: 0.5em;
 }
-.create-todo button {
-    padding: 1em;
-}
+
 .todo-section {
     display: flex;
     justify-content: center;
@@ -33,27 +42,23 @@ body {
     padding: 2em;
 }
 
-h1 {
-    text-decoration: underline;
-}
-
-#completed {
-    text-decoration: line-through;
-}
-
 .background {
     background-color: rgb(253, 243, 231);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 23px 37px -5px, rgba(0, 0, 0, 0.3) 0px 18px 26px -8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 23px 37px 5px, rgba(0, 0, 0, 0.3) 0px 18px 26px 8px;
     padding: 2em;
 }
 
 .flex-row {
     display: flex;
-    gap: 2em;
+    gap: 1em;
 }
 
 input[type=checkbox] {
     height: 40px;
     width: 40px;
+    cursor: pointer;
+}
+
+button {
     cursor: pointer;
 }
