@@ -12,7 +12,6 @@ function getTodos () {
         .then((res) => res.json())
         .then((value) => {
             todosArray = value.todos;
-            console.log(todosArray)
             applyTodos(todosArray);
         })
 }
@@ -35,7 +34,6 @@ function applyTodos(todosArray){
 
 function createTodoElements (todo) {
     let listItem = document.createElement("li");
-    listItem.classList.add("todo-element");
     let article = document.createElement("article");
 
     let flexRow = document.createElement("div");
